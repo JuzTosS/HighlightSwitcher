@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:gravity="center" android:orientation="vertical"
+        android:id="@+id/rootLayout" android:measureWithLargestChild="true" android:clickable="true">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:gravity="center">
+        <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/offBtn"
+                android:onClick="offClick"/>
+        <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/onBtn"
+                android:onClick="onClick"/>
+    </LinearLayout>
+    <SeekBar
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_below="@+id/button" android:onClick="onSeekClick"/>
+</LinearLayout>
