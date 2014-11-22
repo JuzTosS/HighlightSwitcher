@@ -20,8 +20,6 @@ import android.widget.ToggleButton;
 public class MainActivityOnStartTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     private MainActivity mActivity;
-    private ToggleButton mOffBtn;
-    private ToggleButton mOnBtn;
     private SeekBar mSeekBar;
 
     public MainActivityOnStartTest() {
@@ -32,8 +30,6 @@ public class MainActivityOnStartTest extends ActivityInstrumentationTestCase2<Ma
     protected void setUp() throws Exception {
         super.setUp();
         mActivity = getActivity();
-        mOffBtn = (ToggleButton) mActivity.findViewById(R.id.offBtn);
-        mOnBtn = (ToggleButton) mActivity.findViewById(R.id.onBtn);
         mSeekBar = (SeekBar) mActivity.findViewById(R.id.seekBar);
     }
 
@@ -46,6 +42,6 @@ public class MainActivityOnStartTest extends ActivityInstrumentationTestCase2<Ma
             curBrightnessValue = -1;
         }
 
-        assertEquals(curBrightnessValue - BrightnessController.MIN_VALUE, progress);
+        assertEquals(curBrightnessValue, progress);
     }
 }

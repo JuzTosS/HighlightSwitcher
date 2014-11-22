@@ -21,6 +21,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        initBrightnessController();
+        initSeekBar();
+        setMoveToBackListener();
+
+        update();
+    }
+
+    private void initBrightnessController() {
         mBrightnessController = new BrightnessController(this);
         mBrightnessController.setListener(new IBrightnessChangedListener() {
             @Override
@@ -28,6 +36,9 @@ public class MainActivity extends Activity {
                 update();
             }
         });
+    }
+
+    private void initSeekBar() {
         seekBar().setMax(BrightnessController.MAX_VALUE - BrightnessController.MIN_VALUE);
         seekBar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -47,8 +58,10 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.rootLayout);
+    private void setMoveToBackListener() {
+        View layout = findViewById(R.id.rootLayout);
         layout.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -57,8 +70,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
-        update();
     }
 
     private void update() {
@@ -97,9 +108,5 @@ public class MainActivity extends Activity {
 
     private ToggleButton onBtn() {
         return (ToggleButton) findViewById(R.id.onBtn);
-    }
-
-    public void onBackgroundClick(View view) {
-        moveTaskToBack(true);
     }
 }
