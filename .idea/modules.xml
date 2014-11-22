@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HighlightSwitcher.iml" filepath="$PROJECT_DIR$/HighlightSwitcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HighlightTest/HighlightTest.iml" filepath="$PROJECT_DIR$/HighlightTest/HighlightTest.iml" />
     </modules>
   </component>
 </project>

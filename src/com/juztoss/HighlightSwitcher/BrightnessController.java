@@ -17,8 +17,14 @@ public class BrightnessController {
     }
 
     public int getBrightness() {
-        WindowManager.LayoutParams layoutParams = mActivity.getWindow().getAttributes();
-        return (int) (layoutParams.screenBrightness * MAX_VALUE);
+        int value;
+        try {
+            value = Settings.System.getInt(mActivity.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
+        } catch (Settings.SettingNotFoundException e) {
+            value = -1;
+        }
+
+        return value;
     }
 
     public void setBrightness(int value) {
