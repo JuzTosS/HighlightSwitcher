@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:gravity="center" android:orientation="vertical"
-        android:id="@+id/rootLayout" android:measureWithLargestChild="true" android:clickable="true">
 
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+             android:layout_height="fill_parent" android:id="@+id/rootLayout" android:theme="@style/Theme.Transparent">
+    <ImageView
+            android:layout_width="310dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageView" android:layout_gravity="center" android:src="@drawable/icon_base_patch"
+            android:scaleType="fitXY" android:onClick="onImageClick"/>
     <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:gravity="center">
-        <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/offBtn"
-                android:onClick="offClick"/>
-        <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/onBtn"
-                android:onClick="onClick"/>
+            android:layout_height="fill_parent" android:gravity="center" android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/linearLayout2" android:measureWithLargestChild="false" android:clickable="false"
+                      android:orientation="vertical" android:gravity="center">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:gravity="center">
+                <ToggleButton android:layout_width="60dp" android:layout_height="60dp"
+                              android:id="@+id/offBtn" android:onClick="offClick" android:src="@drawable/icon_dark"
+                              android:background="@drawable/off_btn" android:layout_margin="10dp"
+                              android:scaleType="fitStart"
+                              android:textOff="" android:textOn=""/>
+                <ToggleButton android:layout_width="60dp" android:layout_height="60dp"
+                              android:id="@+id/onBtn" android:onClick="onClick" android:src="@drawable/icon_full"
+                              android:layout_margin="10dp" android:background="@drawable/on_btn"
+                              android:cropToPadding="false" android:scaleType="fitStart"
+                              android:textOff="" android:textOn=""/>
+            </LinearLayout>
+            <SeekBar android:layout_width="294dp" android:layout_height="wrap_content" android:id="@+id/seekBar"
+                     android:layout_below="@+id/button" android:onClick="onSeekClick"/>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+        </LinearLayout>
     </LinearLayout>
-    <SeekBar
-            android:layout_width="294dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/seekBar"
-            android:layout_below="@+id/button" android:onClick="onSeekClick"/>
-</LinearLayout>
+</FrameLayout>

@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
-import android.widget.ToggleButton;
+import android.widget.*;
 
 public class MainActivity extends Activity {
 
@@ -108,5 +105,8 @@ public class MainActivity extends Activity {
 
     private ToggleButton onBtn() {
         return (ToggleButton) findViewById(R.id.onBtn);
+    }
+
+    public void onImageClick(View view) {
     }
 }
